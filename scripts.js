@@ -61,12 +61,12 @@ class Game {
         this.addnew_section();
         const direction = this.input_key.getDirection();
     
-        // Moving body
+        //body
         for (let i = this.snake_body.length - 2; i>= 0; i--) {
             this.snake_body[i + 1]= {...this.snake_body[i]}
         }
     
-        // Snake's head
+        //head
         this.snake_body[0].x += direction.x;
         this.snake_body[0].y += direction.y;   
     }
@@ -97,11 +97,7 @@ class Game {
     snakeIntersection() {
         return this.elementOnSnake(this.snake_body[0], {ignoreHead: true})
     }
-
-    //#endregion
-
-
-    //#region Apple's properties
+    //apple
 
     updateApple(){
         if(this.elementOnSnake(this.apple)){
@@ -117,8 +113,6 @@ class Game {
         }
         return applePos;
     }
-
-    //#endregion
 
     
     randomPosition() {
